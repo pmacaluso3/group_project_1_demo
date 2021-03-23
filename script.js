@@ -6,7 +6,7 @@ const goToIndex = async () => {
   document.querySelector('#show').classList.add('hidden')
   document.querySelector('#index').classList.remove('hidden')
 
-  const res = await fetch('http://myapi-profstream.herokuapp.com/api/cb9996/wines')
+  const res = await fetch('https://myapi-profstream.herokuapp.com/api/cb9996/wines')
   const data = await res.json()
 
   document.querySelector('#index').textContent = ''
@@ -21,7 +21,7 @@ const goToIndex = async () => {
 }
 
 const goToShow = async (id) => {
-  const res = await fetch(`http://myapi-profstream.herokuapp.com/api/cb9996/wines/${id}`)
+  const res = await fetch(`https://myapi-profstream.herokuapp.com/api/cb9996/wines/${id}`)
   const data = await res.json()
   document.querySelector('#show-name').innerText = data.name
   document.querySelector('#show-country-region').innerText = `${data.region}, ${data.country}`
@@ -67,7 +67,7 @@ document.querySelector('#new-wine-form').addEventListener('submit', async (event
 
   const body = JSON.stringify({ name, description, year, grapes, country, region, picture, price })
   
-  const res = await fetch('http://myapi-profstream.herokuapp.com/api/cb9996/wines/', {
+  const res = await fetch('https://myapi-profstream.herokuapp.com/api/cb9996/wines/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ document.querySelector('#new-wine-form').addEventListener('submit', async (event
 })
 
 document.querySelector('#delete-wine').addEventListener('click', async () => {
-  await fetch(`http://myapi-profstream.herokuapp.com/api/cb9996/wines/${wineId}`, { method: 'DELETE' })
+  await fetch(`https://myapi-profstream.herokuapp.com/api/cb9996/wines/${wineId}`, { method: 'DELETE' })
   goToIndex()
 })
 
@@ -89,7 +89,7 @@ document.querySelector('#edit-wine').addEventListener('click', (event) => {
 })
 
 const goToEdit = async (id) => {
-  const res = await fetch(`http://myapi-profstream.herokuapp.com/api/cb9996/wines/${id}`)
+  const res = await fetch(`https://myapi-profstream.herokuapp.com/api/cb9996/wines/${id}`)
   const wine = await res.json()
 
   document.querySelector('#edit-name').value = wine.name
@@ -117,7 +117,7 @@ document.querySelector('#edit-wine-form').addEventListener('submit', async (even
 
   const body = JSON.stringify({ name, description, year, grapes, country, region, picture, price })
   
-  const res = await fetch(`http://myapi-profstream.herokuapp.com/api/cb9996/wines/${wineId}`, {
+  const res = await fetch(`https://myapi-profstream.herokuapp.com/api/cb9996/wines/${wineId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'

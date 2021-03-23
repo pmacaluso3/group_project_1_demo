@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <span id="index-link" class="nav-link">All Wines</span>
+    <span id="new-link" class="nav-link">Create a New Wine</span>
+  </nav>
+
+  <section id="index"></section>
+
+  <section id="new" class="hidden">
+    <form id="new-wine-form">
+      <label for="new-name">Name:</label>
+      <input type="text" id="new-name">
+      
+      <label for="new-description">Description:</label>
+      <input type="text" id="new-description">
+
+      <button id="submit-new-wine">Create it!</button>
+    </form>
+  </section>
+
+  <section id="show" class="hidden">
+    <span id="show-name"></span><br />
+    From <span id="show-country-region"></span><br />
+    <span id="show-description"></span><br />
+    Made from <span id="show-grapes"></span><br />
+    <img id="show-picture" src="" alt="">
+    <button id="delete-wine">Delete</button>
+    <button id="edit-wine">Edit</button>
+  </section>
+  <section id="edit" class="hidden">
+    <form id="edit-wine-form">
+      <label for="edit-name">Name:</label>
+      <input type="text" id="edit-name">
+      
+      <label for="edit-description">Description:</label>
+      <input type="text" id="edit-description">
+
+      <button id="submit-edit-wine">Update it!</button>
+    </form>
+  </section>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>

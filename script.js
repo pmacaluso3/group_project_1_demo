@@ -15,7 +15,7 @@ const goToIndex = async () => {
     const wineDiv = document.createElement('div')
     wineDiv.classList.add('single-wine')
     wineDiv.innerText = `${wine.name}, from ${wine.country}`
-    wineDiv.dataset.id = wine.id
+    wineDiv.id = 'wine-' + wine.id
     document.querySelector('#index').append(wineDiv)
   }
 }
@@ -46,7 +46,7 @@ document.querySelector('#new-link').addEventListener('click', () => {
 
 document.addEventListener('click', async (event) => {
   if (event.target.matches('.single-wine')) {
-    wineId = event.target.dataset.id
+    wineId = event.target.id.replace('wine-', '')
     goToShow(wineId)
   }
 })
